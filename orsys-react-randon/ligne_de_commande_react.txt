@@ -1,0 +1,2 @@
+npx generate-react-cli c TemplateName    
+npx generate-react-cli c -type=uicmp Button 
