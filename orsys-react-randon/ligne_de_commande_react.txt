@@ -1,2 +1,15 @@
+vs code extension
+-es7 plus
+-js jsx snippet
+-Path Intellisense
+-Search node_modules
+-pretties
+-ESLint
+-Incredible Watcher
+-Auto Complete Tag
+
+
+https://www.npmjs.com/package/generate-react-cli
+
 npx generate-react-cli c TemplateName    
-npx generate-react-cli c -type=uicmp Button 
+npx generate-react-cli c --type=uicmp Button 
