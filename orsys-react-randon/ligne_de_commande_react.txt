@@ -12,4 +12,5 @@ vs code extension
 https://www.npmjs.com/package/generate-react-cli
 
 npx generate-react-cli c TemplateName    
-npx generate-react-cli c --type=uicmp Button 
+npx generate-react-cli c --type=uicmp Button
+npx generate-react-cli c TemplateName

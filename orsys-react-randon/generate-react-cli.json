@@ -1,7 +1,7 @@
 {
-    "usesTypeScript": false,
+    "usesTypeScript": true,
     "usesStyledComponents": false,
-    "usesCssModule": false,
+    "usesCssModule": true,
     "cssPreprocessor": "css",
     "testLibrary": "Testing Library",
     "component": {
@@ -20,6 +20,18 @@
             "withLazy": true,
             "customTemplates": {
                 "component": "grc_template/uiTemplate/TemplateName.js"
+            }
+        },
+        "layoutcmp": {
+            "path": "src/components/layout",
+            "withStyle": true,
+            "withTest": true,
+            "withStory": true,
+            "withLazy": true,
+            "customTemplates": {
+                "component": "grc_template/layouttemplate/TemplateName.tsx",
+                "test": "grc_template/layouttemplate/TemplateName.stories.tsx",
+                "story": "grc_template/layouttemplate/TemplateName.test.tsx"
             }
         }
     }

@@ -1,14 +1,7 @@
 import React from "react";
-import "./TemplateName.css";
-
-const TemplateName = (props) => {
-    <div className="TemplateName" data-testid="TemplateName">
-        TemplateName Component
-    </div>;
+import style from "./TemplateName.mpodule.css";
+const TemplateName = () => {
+    return <div className={style.TemplateName}>TemplateName</div>;
 };
-
-TemplateName.propTypes = {};
-
-TemplateName.defaultProps = {};
 
 export default TemplateName;

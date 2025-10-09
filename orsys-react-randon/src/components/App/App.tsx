@@ -1,56 +1,34 @@
-import { useEffect, useState } from "react";
-import Button from "../ui/Button/Button";
 import "./App.css";
-
+import "./App.css";
+import FlexHGrow3 from "../layout/FlexHGrow3/FlexHGrow3";
+import FlexVGrow1 from "../layout/FlexVGrow1/FlexVGrow1";
+import Header from "../ui/Header/Header.jsx";
+import Navbar from "../ui/Navbar/Navbar";
+import MemeForm from "../functionnal/MemeForm/MemeForm";
+import { emptyMeme, MemeSVGViewer, type MemeInterface } from "orsys-tjs-meme";
+import Footer from "../ui/Footer/Footer";
+import { useState } from "react";
 const App = () => {
-    const [counter, setCounter] = useState(0);
-
-    useEffect(() => {
-        setCounter(0);
-        console.log(`mount ->`, counter);
-    }, []);
-
-    useEffect(() => {
-        return () => {
-            console.log(
-                `Counter UseEffect ---> without <--- mount and unmount => `,
-                counter
-            );
-        };
-    }, [counter]);
-
-    useEffect(() => {
-        console.log(
-            `all refresh UseEffect 'with' mount and unmount => `,
-            counter
-        );
-    });
+    const [currentName, setCurrentName] = useState<MemeInterface>(emptyMeme);
     return (
-        <>
-            <div style={{ textAlign: "center" }}>
-                <div> valeur du count:{counter}</div>
-                <hr />
-                <Button
-                    bgColor="tomato"
-                    clickAction={() => {
-                        setCounter(counter - 1);
-
-                        console.log(`Counter`, counter);
+        <FlexHGrow3>
+            <Header />
+            <Navbar />
+            <FlexVGrow1>
+                <MemeSVGViewer
+                    basePath=""
+                    image={undefined}
+                    meme={currentName}
+                />
+                <MemeForm
+                    meme={currentName}
+                    onMemeChange={(newMeme: MemeInterface) => {
+                        setCurrentName(newMeme);
                     }}
-                >
-                    -1
-                </Button>
-                <Button
-                    bgColor="skyblue"
-                    clickAction={() => {
-                        setCounter(counter + 1);
-                        console.log(`Counter`, counter);
-                    }}
-                >
-                    +1
-                </Button>
-            </div>
-        </>
+                />
+            </FlexVGrow1>
+            <Footer />
+        </FlexHGrow3>
     );
 };
 
