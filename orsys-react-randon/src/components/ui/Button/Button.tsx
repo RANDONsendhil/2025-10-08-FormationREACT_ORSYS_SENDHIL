@@ -4,15 +4,15 @@ interface IButtonProps {
     type?: "button" | "reset" | "submit";
     bgColor?: string;
     children: string | React.ReactElement | Array<string | React.ReactElement>;
-    style: object;
+    style?: object;
     clickAction?: (unArg: string) => void;
 }
 
 const Button: React.FC<IButtonProps> = ({
-    style,
+    type = "button",
     bgColor,
     children,
-    type = "button",
+    style,
     clickAction,
 }) => {
     const buttonOnclick = (
@@ -27,7 +27,7 @@ const Button: React.FC<IButtonProps> = ({
         <button
             type={type}
             className={styleComponent.Button}
-            style={{ ...style, backgroundColor: bgColor }}
+            style={{ backgroundColor: bgColor, ...style }}
             data-testid="Button"
             onClick={buttonOnclick}
         >

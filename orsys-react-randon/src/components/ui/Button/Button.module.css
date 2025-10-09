@@ -1,8 +1,10 @@
 .Button {
     display: flex;
     border: 3px solid;
-    border-radius: 10px 5px;
-    color: rgb(27, 117, 117);
-    padding: 10px 30px;
+    border-radius: 5px;
+    color: rgb(0, 100, 100);
+    padding: 13px 30px;
     background-color: blanchedalmond;
+    flex-direction: row-reverse;
+    margin: 10px;
 }
