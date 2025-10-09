@@ -13,6 +13,7 @@ const Button: React.FC<IButtonProps> = ({
     bgColor,
     children,
     type = "button",
+    clickAction,
 }) => {
     const buttonOnclick = (
         evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
