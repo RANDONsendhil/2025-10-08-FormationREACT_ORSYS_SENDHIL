@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button";
-const MemeForm = ({ meme, onMemeChange }) => {
+const MemeForm = ({ meme, onMemeChange, images }) => {
     const [current, setCurrent] = useState(meme);
 
     const onNumberInputChange = (evt) => {
@@ -26,7 +26,7 @@ const MemeForm = ({ meme, onMemeChange }) => {
     };
     return (
         <div className={style.MemeForm}>
-            {JSON.stringify(current)}
+            {/* {JSON.stringify(current)} */}
             <form
                 onSubmit={(evt) => {
                     evt.preventDefault();
@@ -44,12 +44,22 @@ const MemeForm = ({ meme, onMemeChange }) => {
                     onChange={onStringInputChange}
                 />
                 <hr />
-                <label htmlFor="image">
+                <label htmlFor="imageId">
                     <h2>Image</h2>
                 </label>
                 <br />
-                <select name="image" id="image">
+                <select
+                    name="imageId"
+                    id="imageId"
+                    value={current.imageId}
+                    onChange={onNumberInputChange}
+                >
                     <option value="-1">No image</option>
+                    {images.map((img, i) => (
+                        <option key={"option" + i} value={img.id}>
+                            {img.name}
+                        </option>
+                    ))}
                 </select>
                 <hr />
                 <label htmlFor="text">
@@ -92,7 +102,13 @@ const MemeForm = ({ meme, onMemeChange }) => {
                 <label htmlFor="color">
                     <h2 style={{ display: "inline" }}>color :</h2>
                 </label>
-                <input name="color" id="color" type="color" />
+                <input
+                    name="color"
+                    id="color"
+                    type="color"
+                    value={current.color}
+                    onChange={onNumberInputChange}
+                />
                 <br />
                 <label htmlFor="fontSize">
                     <h2 style={{ display: "inline" }}>font-size :</h2>
