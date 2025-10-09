@@ -4,6 +4,7 @@ import "./App.css";
 
 const App = () => {
     const [counter, setCounter] = useState(0);
+
     useEffect(() => {
         setCounter(0);
         console.log(`mount ->`, counter);

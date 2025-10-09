@@ -8,3 +8,13 @@
     flex-direction: row-reverse;
     margin: 10px;
 }
+
+.clicked {
+    box-shadow: 15px 15px 25px grey;
+    border: 1px solid grey;
+    padding: 4px 9px;
+}
+
+.danger {
+    background-color: "tomato";
+}
