@@ -14,6 +14,11 @@ vs code extension
 -redux besoin une fonction pure et immutable
 
 
+***ROUTER***
+shortcut
+-trafce
+
+
 https://www.npmjs.com/package/generate-react-cli
 
 npx generate-react-cli c TemplateName    

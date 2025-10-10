@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import style from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button";
-const MemeForm = ({ meme, onMemeChange, images, onMemeSave }) => {
-    const [current, setCurrent] = useState(meme);
-    useEffect(() => {
-        onMemeChange(current);
-    }, [current]);
+const MemeForm = ({ meme, onMemeChange, images }) => {
+    // const [current, setCurrent] = useState(meme);
+    // useEffect(() => {
+    //   onMemeChange(current)
+    // }, [current])
+    const current = meme;
+    const setCurrent = onMemeChange;
     const onNumberInputChange = (evt) => {
         const newState = { ...current };
         newState[evt.target.name] = parseInt(evt.target.value);
@@ -26,8 +28,7 @@ const MemeForm = ({ meme, onMemeChange, images, onMemeSave }) => {
             <form
                 onSubmit={(evt) => {
                     evt.preventDefault();
-                    // onMemeChange(current);
-                    onMemeSave(current);
+                    onMemeChange(current);
                 }}
             >
                 <label htmlFor="titre">
