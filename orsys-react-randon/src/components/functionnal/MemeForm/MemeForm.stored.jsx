@@ -2,6 +2,7 @@ import React from "react";
 import UnconnectedMemeForm from "./MemeForm";
 import { useDispatch, useSelector } from "react-redux";
 import { update } from "../../../store/current";
+import { saveMeme } from "../../../store/asyncCaller";
 const MemeForm = (props) => {
     const images = useSelector((storeState) => storeState.ressources.images);
     const meme = useSelector((storeState) => {
@@ -15,6 +16,9 @@ const MemeForm = (props) => {
             meme={meme}
             onMemeChange={(newMeme) => {
                 dispatch(update(newMeme));
+            }}
+            onMemeSave={(newMeme) => {
+                dispatch(saveMeme(newMeme));
             }}
         />
     );

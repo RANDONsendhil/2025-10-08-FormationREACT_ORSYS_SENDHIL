@@ -8,12 +8,7 @@ import MemeForm from "../functionnal/MemeForm/MemeForm.stored";
 import MemeSvgViewer from "../ui/MemeSVGViewer/MemeSVGViewer.stored";
 
 import Footer from "../ui/Footer/Footer";
-
-import store from "../../store/store";
-
 const App = () => {
-    console.log(store);
-
     return (
         <FlexHGrow3>
             <Header />

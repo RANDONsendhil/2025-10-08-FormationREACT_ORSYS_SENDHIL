@@ -1,36 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button";
-const MemeForm = ({ meme, onMemeChange, images }) => {
+const MemeForm = ({ meme, onMemeChange, images, onMemeSave }) => {
     const [current, setCurrent] = useState(meme);
-
+    useEffect(() => {
+        onMemeChange(current);
+    }, [current]);
     const onNumberInputChange = (evt) => {
         const newState = { ...current };
         newState[evt.target.name] = parseInt(evt.target.value);
         setCurrent(newState);
-        console.log(newState);
     };
-
     const onStringInputChange = (evt) => {
         const newState = { ...current };
         newState[evt.target.name] = evt.target.value;
         setCurrent(newState);
-        console.log(newState);
     };
-
     const onCheckInputChange = (evt) => {
         const newState = { ...current };
         newState[evt.target.name] = evt.target.checked;
         setCurrent(newState);
-        console.log(newState);
     };
     return (
         <div className={style.MemeForm}>
-            {/* {JSON.stringify(current)} */}
             <form
                 onSubmit={(evt) => {
                     evt.preventDefault();
-                    onMemeChange(current);
+                    // onMemeChange(current);
+                    onMemeSave(current);
                 }}
             >
                 <label htmlFor="titre">
@@ -107,7 +104,7 @@ const MemeForm = ({ meme, onMemeChange, images }) => {
                     id="color"
                     type="color"
                     value={current.color}
-                    onChange={onNumberInputChange}
+                    onChange={onStringInputChange}
                 />
                 <br />
                 <label htmlFor="fontSize">
@@ -135,14 +132,15 @@ const MemeForm = ({ meme, onMemeChange, images }) => {
                     min="100"
                     step="100"
                     max="900"
-                    onChange={onNumberInputChange}
+                    value={current.fontWeight}
+                    onChange={onStringInputChange}
                 />
                 <br />
                 <input
                     name="underline"
                     id="underline"
                     type="checkbox"
-                    value={current.underline}
+                    checked={current.urderline}
                     onChange={onCheckInputChange}
                 />
                 &nbsp;
