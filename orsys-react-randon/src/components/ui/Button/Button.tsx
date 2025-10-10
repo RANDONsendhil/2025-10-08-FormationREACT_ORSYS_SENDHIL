@@ -25,7 +25,6 @@ const Button: React.FC<IButtonProps> = ({
     const buttonOnclick = (
         evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
-        console.log("button clicked", evt);
         if (clickAction) {
             setClicked(true);
             clickAction("Par clickAction");

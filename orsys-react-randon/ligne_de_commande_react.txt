@@ -8,6 +8,11 @@ vs code extension
 -Incredible Watcher
 -Auto Complete Tag
 
+-npm trends => flux => zustand => mobx => (redux est meilleurs)
+-redux => A JS library for predictable and maintainable global state management 
+-create slice redux => 'rxslice'
+-redux besoin une fonction pure et immutable
+
 
 https://www.npmjs.com/package/generate-react-cli
 
